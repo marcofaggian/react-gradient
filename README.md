@@ -26,11 +26,11 @@ const colors = [...Array(getRandomInt(15))].map(() => ({
 > You can find it at [`/src/styles/gradients.ts(10)`](https://github.com/marcofaggian/react-gradient/blob/master/src/styles/gradients.ts#L10)
 
 ```css
-  background-image: ${({ colors }: { colors: Colors }) =>
-    colors.map(
-      ({ x, y, width, color }, i) =>
-        `radial-gradient(circle at ${x}% ${y}%,
-    hsl(${color}, 100%, 90%) 0%,
-    transparent ${width}%)${colors.length - 1 === i ? "" : ", "}`
-    )};
+background-image: ${({ colors }: { colors: Colors }) =>
+  colors.map(
+    ({ x, y, width, color }, i) =>
+      `radial-gradient(circle at ${x}% ${y}%,
+      hsl(${color}, 100%, 90%) 0%,
+      transparent ${width}%)${colors.length - 1 === i ? "" : ", "}`
+  )};
 ```
