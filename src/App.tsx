@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Header, BgDiv } from "./styles/gradients";
+
+const getRandomInt = (max: number) => {
+  return Math.floor(Math.random() * Math.floor(max));
+};
 
 function App() {
+  const colors = [...Array(getRandomInt(15))].map(() => ({
+    color: getRandomInt(360),
+    x: getRandomInt(100),
+    y: getRandomInt(100),
+    width: getRandomInt(30),
+  }));
+
+  console.log("colors", colors);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center" }}>
+      <Header>
+        <BgDiv colors={colors} />
+        <h1 style={{ color: "#000" }}>React gradients</h1>
+      </Header>
     </div>
   );
 }
